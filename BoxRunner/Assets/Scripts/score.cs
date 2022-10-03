@@ -2,6 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System;
+using System.Collections;
 
 public class score : MonoBehaviour
 {
@@ -42,28 +44,62 @@ public class score : MonoBehaviour
     public void StopScoreCount()
     {
         gameHasEnded = true;
-        
-        finalScoreText.text = scoreText.text;
-        int finalScore = int.Parse(finalScoreText.text);
+        SaveScore();
+        DislayScore();
 
-        SaveObject saveObject = new SaveObject()
+    }
+
+    void SaveScore()
+    {
+        int newScore = int.Parse(scoreText.text);
+        PlayerInfo playerInfo = LoadScore();
+
+        if (newScore > playerInfo.score)
         {
-            userName = "Kenneth",
-            score = finalScore,
-        };
 
-        string json = JsonUtility.ToJson(saveObject);
+            PlayerInfo newPlayerInfo = new PlayerInfo
+            {
+                userName = "Kenneth",
+                score = newScore,
+            };
+            string jsonFile = JsonUtility.ToJson(newPlayerInfo);
+            File.WriteAllText(Application.dataPath + "/score.txt", jsonFile);
 
-        File.WriteAllText(Application.dataPath + "/score.txt", json);
+        }
+    }
 
+    PlayerInfo LoadScore()
+    {
+        string loadedTxt = File.ReadAllText(Application.dataPath + "/score.txt");
+        PlayerInfo loadedJson = JsonUtility.FromJson<PlayerInfo>(loadedTxt);
+        return loadedJson;
 
+    }
 
+    void DislayScore()
+    {
+        PlayerInfo playerInfo = LoadScore();
+        highScoreText.text = playerInfo.score.ToString();
+        finalScoreText.text = scoreText.text;
     }
 }
 
 
-public class SaveObject
+public class PlayerInfo : IComparable<PlayerInfo>
 {
     public string userName;
     public int score;
+
+
+    public int CompareTo(PlayerInfo playerInfo)
+    {
+        return this.score.CompareTo(playerInfo.score);
+    }
+
+}
+
+
+public class Leaderboard {
+   
+
 }
