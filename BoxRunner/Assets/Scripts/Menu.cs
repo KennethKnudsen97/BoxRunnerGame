@@ -7,6 +7,7 @@ public class Menu : MonoBehaviour
 
     public GameObject optionsMenu;
     public GameObject leaderBoardMenu;
+    public GameObject userPanel;
     public GameObject menu;
 
 
@@ -18,6 +19,13 @@ public class Menu : MonoBehaviour
     public void ShowOptions()
     {
         optionsMenu.SetActive(true);
+        menu.SetActive(false);
+
+    }
+
+    public void ShowUserLoginPage()
+    {
+        userPanel.SetActive(true);
         menu.SetActive(false);
 
     }
@@ -34,6 +42,6 @@ public class Menu : MonoBehaviour
         gameObject.SetActive(true);
         leaderBoardMenu.SetActive(false);
         optionsMenu.SetActive(false);
-
+        userPanel.SetActive(false);
     }
 }

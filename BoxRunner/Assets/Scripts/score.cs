@@ -17,7 +17,6 @@ public class score : MonoBehaviour
     private float startPosZ = 0;
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -43,14 +42,28 @@ public class score : MonoBehaviour
     public void StopScoreCount()
     {
         gameHasEnded = true;
-        finalScoreText.text = scoreText.text;
-
-        if (int.Parse(finalScoreText.text) > int.Parse(File.ReadAllText(Application.dataPath + "/score.txt")))
-        {
-            File.WriteAllText(Application.dataPath + "/score.txt", finalScoreText.text);
-        }
-
-        highScoreText.text = File.ReadAllText(Application.dataPath + "/score.txt");
         
+        finalScoreText.text = scoreText.text;
+        int finalScore = int.Parse(finalScoreText.text);
+
+        SaveObject saveObject = new SaveObject()
+        {
+            userName = "Kenneth",
+            score = finalScore,
+        };
+
+        string json = JsonUtility.ToJson(saveObject);
+
+        File.WriteAllText(Application.dataPath + "/score.txt", json);
+
+
+
     }
+}
+
+
+public class SaveObject
+{
+    public string userName;
+    public int score;
 }
