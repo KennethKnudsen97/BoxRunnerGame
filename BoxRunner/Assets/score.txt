@@ -1,24 +1,56 @@
 {
     "entryList": [
         {
+            "userName": "Emilia",
+            "score": 2111
+        },
+        {
+            "userName": "Jacob",
+            "score": 1234
+        },
+        {
+            "userName": "Bo",
+            "score": 1200
+        },
+        {
+            "userName": "Kenneth",
+            "score": 1155
+        },
+        {
+            "userName": "Magnus",
+            "score": 666
+        },
+        {
+            "userName": "Jørgen",
+            "score": 655
+        },
+        {
+            "userName": "Jens",
+            "score": 522
+        },
+        {
             "userName": "Jacob",
             "score": 300
         },
         {
+            "userName": "",
+            "score": 250
+        },
+        {
+            "userName": "Ole",
+            "score": 234
+        },
+        {
+            "userName": "Børge",
+            "score": 211
+        },
+        {
             "userName": "Søren",
-            "score": 141
+            "score": 133
         },
         {
-            "userName": "Jalalala",
-            "score": 93
-        },
-        {
-            "userName": "Knud",
-            "score": 83
-        },
-        {
-            "userName": "gdgdg",
-            "score": 20
+            "userName": "",
+            "score": 58
         }
     ]
 }

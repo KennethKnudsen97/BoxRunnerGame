@@ -8,6 +8,10 @@ public class GameManeger : MonoBehaviour
     bool gameHasEnded = false;
     public GameObject LostGameUI;
 
+    private void Start()
+    {
+        LostGameUI.SetActive(false);
+    }
     public void LostGame()
     {
         LostGameUI.SetActive(true);
@@ -23,7 +27,7 @@ public class GameManeger : MonoBehaviour
             //Get score class so we can stop score count and also get the final score
             score scoreClass = FindObjectOfType<score>();
             scoreClass.StopScoreCount();
-            string scoreText = scoreClass.GetFinalScore();
+           
 
             Debug.Log("Game over!");
             Invoke("LostGame", 5f);
@@ -42,4 +46,8 @@ public class GameManeger : MonoBehaviour
         Application.Quit();
     }
     
+    public void LoadMenuScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -1);
+    }
 }

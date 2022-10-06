@@ -21,7 +21,7 @@ public class score : MonoBehaviour
 
     private bool gameHasEnded;
     private float startPosZ = 0;
-    private const int MAXNUMBEROFENTYES = 5;
+    private const int MAXNUMBEROFENTYES = 20;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +39,9 @@ public class score : MonoBehaviour
         }
     }
 
-    public string GetFinalScore()
+    public void DisplayScore()
     {
-        return scoreText.text;
+        //scoreText.text;
     }
 
     public void StopScoreCount()

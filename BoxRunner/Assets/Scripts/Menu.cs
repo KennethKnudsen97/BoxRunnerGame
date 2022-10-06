@@ -11,7 +11,14 @@ public class Menu : MonoBehaviour
     public GameObject menu;
 
 
-   
+    private void Start()
+    {
+        leaderBoardMenu.SetActive(false);
+        optionsMenu.SetActive(false);
+        userPanel.SetActive(false);
+
+        menu.SetActive(true);
+    }
     public void ShowOptions()
     {
         optionsMenu.SetActive(true);
@@ -35,7 +42,7 @@ public class Menu : MonoBehaviour
 
     public void Back()
     {
-        gameObject.SetActive(true);
+        menu.SetActive(true);
         leaderBoardMenu.SetActive(false);
         optionsMenu.SetActive(false);
         userPanel.SetActive(false);
