@@ -4,6 +4,8 @@ using UnityEngine.UI;
 using System.IO;
 using System;
 using System.Collections;
+using System.Text;
+using System.Collections.Generic;
 
 public class score : MonoBehaviour
 {
@@ -15,14 +17,15 @@ public class score : MonoBehaviour
     public Text finalScoreText;
     public Text highScoreText;
 
+    private HighScoreTable highScoreTable;
+
     private bool gameHasEnded;
     private float startPosZ = 0;
-
+    private const int MAXNUMBEROFENTYES = 5;
 
     // Start is called before the first frame update
     void Start()
     {
-
         gameHasEnded = false;
         startPosZ = player.position.z;
     }
@@ -44,62 +47,51 @@ public class score : MonoBehaviour
     public void StopScoreCount()
     {
         gameHasEnded = true;
+      
         SaveScore();
-        DislayScore();
-
     }
 
     void SaveScore()
     {
         int newScore = int.Parse(scoreText.text);
-        PlayerInfo playerInfo = LoadScore();
+        string playerUserName = PlayerPrefs.GetString("player");
 
-        if (newScore > playerInfo.score)
+        LoadHighScoreTable("/score.txt");
+        
+        if (highScoreTable.entryList.Count < MAXNUMBEROFENTYES)
         {
+            //No matter the score we can add it
+            highScoreTable.AddPlayerToHighScoreTable(playerUserName, newScore);
 
-            PlayerInfo newPlayerInfo = new PlayerInfo
+            string json = JsonUtility.ToJson(highScoreTable, true);
+            File.WriteAllText(Application.dataPath + "/score.txt", json);
+        }
+        else
+        {
+            if (highScoreTable.entryList[highScoreTable.entryList.Count - 1].score < newScore)
             {
-                userName = "Kenneth",
-                score = newScore,
-            };
-            string jsonFile = JsonUtility.ToJson(newPlayerInfo);
-            File.WriteAllText(Application.dataPath + "/score.txt", jsonFile);
+                highScoreTable.entryList.RemoveAt(highScoreTable.entryList.Count - 1);
+                highScoreTable.AddPlayerToHighScoreTable(playerUserName, newScore);
 
+                string json = JsonUtility.ToJson(highScoreTable, true);
+                File.WriteAllText(Application.dataPath + "/score.txt", json);
+
+            }
+            else
+            {
+                Debug.Log("Not good enough");
+            }
         }
     }
 
-    PlayerInfo LoadScore()
+
+    void LoadHighScoreTable(string filePath)
     {
-        string loadedTxt = File.ReadAllText(Application.dataPath + "/score.txt");
-        PlayerInfo loadedJson = JsonUtility.FromJson<PlayerInfo>(loadedTxt);
-        return loadedJson;
+        string json = File.ReadAllText(Application.dataPath + filePath);
+
+        highScoreTable = JsonUtility.FromJson<HighScoreTable>(json);
+        highScoreTable.entryList.Sort();
 
     }
-
-    void DislayScore()
-    {
-        PlayerInfo playerInfo = LoadScore();
-        highScoreText.text = playerInfo.score.ToString();
-        finalScoreText.text = scoreText.text;
-    }
-}
-
-
-public class PlayerInfo : IComparable<PlayerInfo>
-{
-    public string userName;
-    public int score;
-
-
-    public int CompareTo(PlayerInfo playerInfo)
-    {
-        return this.score.CompareTo(playerInfo.score);
-    }
-
-}
-
-
-public class Leaderboard {
-   
 
 }

@@ -1,1 +1,24 @@
-{"userName":"Kenneth","score":301}
+{
+    "entryList": [
+        {
+            "userName": "Jacob",
+            "score": 300
+        },
+        {
+            "userName": "Søren",
+            "score": 141
+        },
+        {
+            "userName": "Jalalala",
+            "score": 93
+        },
+        {
+            "userName": "Knud",
+            "score": 83
+        },
+        {
+            "userName": "gdgdg",
+            "score": 20
+        }
+    ]
+}

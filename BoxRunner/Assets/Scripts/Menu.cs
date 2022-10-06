@@ -11,11 +11,7 @@ public class Menu : MonoBehaviour
     public GameObject menu;
 
 
-    public void StartGame()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex +1);
-    }   
-
+   
     public void ShowOptions()
     {
         optionsMenu.SetActive(true);
