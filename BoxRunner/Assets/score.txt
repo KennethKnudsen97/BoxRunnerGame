@@ -1,6 +1,10 @@
 {
     "entryList": [
         {
+            "userName": "KennethKnudsen",
+            "score": 2479
+        },
+        {
             "userName": "Emilia",
             "score": 2111
         },
