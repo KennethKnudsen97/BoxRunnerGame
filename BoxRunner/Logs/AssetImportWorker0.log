@@ -702,6 +702,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
+<<<<<<< Updated upstream
 Received Prepare
 Registering precompiled user dll's ...
 Registered in 0.016760 seconds.
@@ -3213,3 +3214,16 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+=======
+Received Import Request.
+  Time since last request: 23.619082 seconds.
+  path: Assets/score.txt
+  artifactKey: Guid(56be72dfddf32604583c9766d019d43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/score.txt using Guid(56be72dfddf32604583c9766d019d43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac94e2a1322e20c29b4041d0d182782f') in 0.112120 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 410.781888 seconds.
+  path: Assets/score.txt
+  artifactKey: Guid(56be72dfddf32604583c9766d019d43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/score.txt using Guid(56be72dfddf32604583c9766d019d43f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8978a9ae1508c1c59f045e2de5cf33c7') in 0.006670 seconds 
+>>>>>>> Stashed changes
