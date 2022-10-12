@@ -9,6 +9,10 @@
             "score": 1234
         },
         {
+            "userName": "elBetico",
+            "score": 1205
+        },
+        {
             "userName": "Bo",
             "score": 1200
         },
@@ -33,6 +37,10 @@
             "score": 522
         },
         {
+            "userName": "elBetico",
+            "score": 450
+        },
+        {
             "userName": "Jacob",
             "score": 300
         },
@@ -55,6 +63,14 @@
         {
             "userName": "Børge",
             "score": 211
+        },
+        {
+            "userName": "elBetico",
+            "score": 160
+        },
+        {
+            "userName": "elBetico",
+            "score": 149
         },
         {
             "userName": "Test",
@@ -63,18 +79,6 @@
         {
             "userName": "Kennet",
             "score": 149
-        },
-        {
-            "userName": "Søren",
-            "score": 133
-        },
-        {
-            "userName": "Søren",
-            "score": 133
-        },
-        {
-            "userName": "Kenneth",
-            "score": 33
         }
     ]
 }
