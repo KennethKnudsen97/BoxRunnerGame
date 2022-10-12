@@ -14,7 +14,7 @@
         },
         {
             "userName": "Kenneth",
-            "score": 1155
+            "score": 810
         },
         {
             "userName": "Magnus",
@@ -29,12 +29,20 @@
             "score": 522
         },
         {
+            "userName": "Jens",
+            "score": 522
+        },
+        {
             "userName": "Jacob",
             "score": 300
         },
         {
-            "userName": "",
-            "score": 250
+            "userName": "Jacob",
+            "score": 300
+        },
+        {
+            "userName": "Ole",
+            "score": 234
         },
         {
             "userName": "Ole",
@@ -45,12 +53,28 @@
             "score": 211
         },
         {
+            "userName": "Børge",
+            "score": 211
+        },
+        {
+            "userName": "Test",
+            "score": 149
+        },
+        {
+            "userName": "Kennet",
+            "score": 149
+        },
+        {
             "userName": "Søren",
             "score": 133
         },
         {
-            "userName": "",
-            "score": 58
+            "userName": "Søren",
+            "score": 133
+        },
+        {
+            "userName": "Kenneth",
+            "score": 33
         }
     ]
 }

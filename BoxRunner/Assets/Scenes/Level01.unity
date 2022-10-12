@@ -241,7 +241,6 @@ MonoBehaviour:
   player: {fileID: 1892984467}
   scoreText: {fileID: 1318991841}
   finalScoreText: {fileID: 1446584317}
-  highScoreText: {fileID: 0}
 --- !u!1 &309687839
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +564,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &491118113
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1409,7 +1408,7 @@ GameObject:
   - component: {fileID: 1318991842}
   - component: {fileID: 1318991841}
   m_Layer: 5
-  m_Name: ScoreText
+  m_Name: CurrentScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1457,10 +1456,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 57948ae352be2d24d874e59e026d3b40, type: 3}
-    m_FontSize: 58
+    m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 6
     m_MaxSize: 73
     m_Alignment: 4
     m_AlignByGeometry: 0

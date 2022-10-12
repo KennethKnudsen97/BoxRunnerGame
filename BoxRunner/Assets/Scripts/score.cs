@@ -15,7 +15,6 @@ public class score : MonoBehaviour
     public Text scoreText;
 
     public Text finalScoreText;
-    public Text highScoreText;
 
     private HighScoreTable highScoreTable;
 
@@ -26,6 +25,8 @@ public class score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        highScoreTable = new HighScoreTable();
+
         gameHasEnded = false;
         startPosZ = player.position.z;
     }
@@ -53,14 +54,20 @@ public class score : MonoBehaviour
 
     void SaveScore()
     {
+        //Updating score on game over screen
+        finalScoreText.text = scoreText.text;
+
         int newScore = int.Parse(scoreText.text);
+
+        //Getting the username saved in playerPref from UserLogin scene 
         string playerUserName = PlayerPrefs.GetString("player");
 
-        LoadHighScoreTable("/score.txt");
+        //HighscoreTable class has a function that load a score text file and update the entry list. 
+        highScoreTable.LoadTableFromFilePath("/score.txt");
         
         if (highScoreTable.entryList.Count < MAXNUMBEROFENTYES)
         {
-            //No matter the score we can add it
+            //If highscore table is free the we can add the score no matter the score
             highScoreTable.AddPlayerToHighScoreTable(playerUserName, newScore);
 
             string json = JsonUtility.ToJson(highScoreTable, true);
@@ -85,13 +92,5 @@ public class score : MonoBehaviour
     }
 
 
-    void LoadHighScoreTable(string filePath)
-    {
-        string json = File.ReadAllText(Application.dataPath + filePath);
-
-        highScoreTable = JsonUtility.FromJson<HighScoreTable>(json);
-        highScoreTable.entryList.Sort();
-
-    }
 
 }
