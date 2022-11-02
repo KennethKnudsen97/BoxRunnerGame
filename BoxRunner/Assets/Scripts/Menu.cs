@@ -19,32 +19,17 @@ public class Menu : MonoBehaviour
 
         menu.SetActive(true);
     }
-    public void ShowOptions()
+
+    public void ShowPanel(GameObject panel)
     {
-        optionsMenu.SetActive(true);
+        panel.SetActive(true);
         menu.SetActive(false);
-
     }
-
-    public void ShowUserLoginPage()
+   
+    public void Back(GameObject panel)
     {
-        userPanel.SetActive(true);
-        menu.SetActive(false);
-
-    }
-
-    public void ShowLeaderBoard()
-    {
-        menu.SetActive(false);
-        leaderBoardMenu.SetActive(true);
-
-    }
-
-    public void Back()
-    {
+        panel.SetActive(false);
         menu.SetActive(true);
-        leaderBoardMenu.SetActive(false);
-        optionsMenu.SetActive(false);
-        userPanel.SetActive(false);
+        
     }
 }

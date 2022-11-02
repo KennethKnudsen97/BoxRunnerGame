@@ -9,6 +9,17 @@ public class PlayerMovement : MonoBehaviour
 
     private int timeBefore = 0;
 
+
+    public AudioClip fallingClip;
+    private new AudioSource audio;
+    private bool feltOutOfMap;
+
+    private void Start()
+    {
+        audio = GetComponent<AudioSource>();
+        feltOutOfMap = false;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -35,7 +46,21 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.position.y < -1f)
         {
+            if (!feltOutOfMap)
+            {
+                feltOutOfMap = true;
+                audio.clip = fallingClip;
+                audio.Play();
+            }
             FindObjectOfType<GameManeger>().EndGame();
+            
         }
+    }
+
+
+    public void DisableMovement()
+    {
+        speed = 0;
+        sideForce = 0;
     }
 }

@@ -4,7 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
+  - EasyToggle
+  - MediumToggle
+  - HardToggle
   layers:
   - Default
   - TransparentFX
