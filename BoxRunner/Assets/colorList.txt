@@ -1,0 +1,16 @@
+{
+    "colorList": [
+        {
+            "hexColor": "#43FF00"
+        },
+        {
+            "hexColor": "#001CFF"
+        },
+        {
+            "hexColor": "#FF0000"
+        },
+        {
+            "hexColor": "#FF0000"
+        }
+    ]
+}

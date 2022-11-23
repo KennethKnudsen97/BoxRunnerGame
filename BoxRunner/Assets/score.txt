@@ -1,84 +1,84 @@
 {
     "entryList": [
         {
-            "userName": "KennethKnudsen",
+            "name": "",
             "score": 2479
         },
         {
-            "userName": "da",
+            "name": "KennethTest123",
+            "score": 2468
+        },
+        {
+            "name": "",
             "score": 2321
         },
         {
-            "userName": "Emilia",
+            "name": "",
             "score": 2111
         },
         {
-            "userName": "Kenneth123",
+            "name": "",
             "score": 1356
         },
         {
-            "userName": "Test123",
+            "name": "",
             "score": 1259
         },
         {
-            "userName": "Jacob",
+            "name": "",
             "score": 1234
         },
         {
-            "userName": "elBetico",
+            "name": "",
             "score": 1205
         },
         {
-            "userName": "Bo",
+            "name": "",
             "score": 1200
         },
         {
-            "userName": "TEstBruger",
+            "name": "",
             "score": 1104
         },
         {
-            "userName": "Test123",
+            "name": "ljahd",
+            "score": 904
+        },
+        {
+            "name": "",
             "score": 853
         },
         {
-            "userName": "Kenneth",
+            "name": "",
             "score": 810
         },
         {
-            "userName": "Test123",
+            "name": "",
             "score": 804
         },
         {
-            "userName": "JEns",
+            "name": "",
             "score": 690
         },
         {
-            "userName": "dsad",
+            "name": "",
             "score": 675
         },
         {
-            "userName": "Magnus",
+            "name": "",
             "score": 666
         },
         {
-            "userName": "Jørgen",
+            "name": "",
             "score": 655
         },
         {
-            "userName": "Test123",
+            "name": "",
             "score": 603
         },
         {
-            "userName": "dasda",
+            "name": "",
             "score": 602
-        },
-        {
-            "userName": "Test123",
-            "score": 552
-        },
-        {
-            "userName": "ijdfd",
-            "score": 551
         }
     ]
 }

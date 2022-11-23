@@ -15,9 +15,7 @@ public class LeaderBoardMenu : MonoBehaviour
 
     private void Start()
     {
-        highScoreTable = new HighScoreTable();
-        highScoreTable.LoadTableFromFilePath("/score.txt");
-
+        highScoreTable =  FileManager<HighScoreTable>.ReadFromFile(Application.dataPath + "/score.txt");
         LoadHighScoreTable();
     }
 
@@ -27,16 +25,16 @@ public class LeaderBoardMenu : MonoBehaviour
         
         foreach(HighScoreEntry entry in highScoreTable.entryList)
         {
-            DisplayHighScore(entry.userName, entry.score);
+            DisplayHighScore(entry.name, entry.score);
         }
 
     }
 
-    private void DisplayHighScore(string Username, int score)
+    private void DisplayHighScore(string name, int score)
     {
         GameObject childHighScore = Instantiate(highScorePrefab, highScoreContainer.transform.position, Quaternion.identity);
 
-        childHighScore.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = Username;
+        childHighScore.transform.GetChild(0).GetComponent<UnityEngine.UI.Text>().text = name;
         childHighScore.transform.GetChild(1).GetComponent<UnityEngine.UI.Text>().text = score.ToString();
         placeNumber++;
         childHighScore.transform.GetChild(2).GetComponent<UnityEngine.UI.Text>().text = placeNumber.ToString();

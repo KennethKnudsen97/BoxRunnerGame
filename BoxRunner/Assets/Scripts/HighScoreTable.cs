@@ -10,7 +10,7 @@ public class HighScoreTable
 { 
     public List<HighScoreEntry> entryList;
    
-
+   
     public HighScoreTable()
     {
         entryList = new List<HighScoreEntry>();
@@ -22,29 +22,18 @@ public class HighScoreTable
         entryList.Sort();
     }
 
-    public void LoadTableFromFilePath(string filePath)
-    {
-        string json = File.ReadAllText(Application.dataPath + filePath);
-
-        HighScoreTable tempTable = JsonUtility.FromJson<HighScoreTable>(json);
-        entryList = tempTable.entryList;
-        entryList.Sort();
-        
-    }
-
-
 }
 
 
 [System.Serializable]
 public class HighScoreEntry : IComparable<HighScoreEntry>
 {
-    public string userName;
+    public string name;
     public int score;
 
     public HighScoreEntry(string userName, int score)
     {
-        this.userName = userName;
+        this.name = userName;
         this.score = score;
     }
 

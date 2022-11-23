@@ -2493,6 +2493,14 @@ PrefabInstance:
       value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 396761043117727585, guid: 80dbeeee47151bb479f8ef9c5626d54c, type: 3}
+      propertyPath: CubeMesh
+      value: 
+      objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 396761043117727585, guid: 80dbeeee47151bb479f8ef9c5626d54c, type: 3}
+      propertyPath: ballMesh
+      value: 
+      objectReference: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 396761043117727585, guid: 80dbeeee47151bb479f8ef9c5626d54c, type: 3}
       propertyPath: fallingClip
       value: 
       objectReference: {fileID: 8300000, guid: ce44b8c07c4659b419c98ed5884eacac, type: 3}
