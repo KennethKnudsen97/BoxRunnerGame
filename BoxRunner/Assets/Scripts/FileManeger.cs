@@ -4,13 +4,11 @@ using UnityEngine;
 [System.Serializable]
 public class FileManager<T>
 {
-    
     public static void WriteToFile(string path, T classToBeSaved)
     {
         if (typeof(T).IsSerializable)
         {
             string json = JsonUtility.ToJson(classToBeSaved, true);
-            Debug.Log("Json = " + json);
             File.WriteAllText(path, json);
         }
         else

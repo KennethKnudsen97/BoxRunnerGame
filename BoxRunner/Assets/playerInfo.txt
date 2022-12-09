@@ -1,5 +1,5 @@
 {
-    "name": "dasdas",
+    "name": "d",
     "color": "#43FF00FF",
     "shape": 1
 }

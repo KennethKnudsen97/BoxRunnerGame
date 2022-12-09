@@ -8,8 +8,15 @@ public class GameManeger : MonoBehaviour
     bool gameHasEnded = false;
     public GameObject LostGameUI;
 
+
+
+
     private void Start()
     {
+        AudioSource music = GetComponent<AudioSource>();
+        Options options = FileManager<Options>.ReadFromFile(Application.dataPath + "/options.txt");
+        music.volume = options.volume;
+
         LostGameUI.SetActive(false);
     }
     public void LostGame()

@@ -111,6 +111,7 @@ public class UserLogin : MonoBehaviour
     public void StartGame()
     {
         SavePlayerInfo();
+     
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -135,6 +136,9 @@ public class UserLogin : MonoBehaviour
         playerInfo.color = "#" + ColorUtility.ToHtmlStringRGBA(tempColor);
         FileManager<PlayerInfo>.WriteToFile(Application.dataPath + "/playerInfo.txt", playerInfo);
     }
+
+ 
+
 
     private async void loadColorFromServer()
     {

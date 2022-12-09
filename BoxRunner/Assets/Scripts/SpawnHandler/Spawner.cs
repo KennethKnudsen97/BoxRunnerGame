@@ -51,7 +51,7 @@ public class Spawner : MonoBehaviour
         {
 
             //Shuffle list after use
-            shuffleGameObjects.shuffle(childList);
+            shuffleGameObjects.Shuffle(childList);
 
 
             //Get the number of obstacles to spawn and then spawn them 

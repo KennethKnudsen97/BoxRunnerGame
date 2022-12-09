@@ -3,6 +3,6 @@
 // Ishuffle has one generics TArray.
 interface IShuffle<T>
 {
-    void shuffle(T[] listToShuffle);
+    void Shuffle(T[] listToShuffle);
 
 }

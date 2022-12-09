@@ -24,7 +24,7 @@ public class ShuffleGameObjects : IShuffle<GameObject>
     }
 
 
-    public void shuffle(GameObject[] listToShuffle)
+    public void Shuffle(GameObject[] listToShuffle)
     {
 
         int length = listToShuffle.Length;
