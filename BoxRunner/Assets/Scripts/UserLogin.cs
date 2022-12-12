@@ -27,7 +27,6 @@ public class UserLogin : MonoBehaviour
 
     private PlayerInfo playerInfo;
 
-    private Ref<string> colorListRef;
     private bool hasdisplayed;
 
     private void Start()
@@ -36,17 +35,16 @@ public class UserLogin : MonoBehaviour
         playerInfo = new PlayerInfo();
         colorList = new ColorList();
         currentPreview = Instantiate(playerPreviewCube, spawnPoint.gameObject.transform.position, spawnPoint.gameObject.transform.rotation);
-        
-        loadColorFromServer();
+        currentPreview.transform.SetParent(spawnPoint.transform);
+        LoadColorFromServer();
     }
 
     private void DisplayColorList()
     {
         foreach(ColorEntry entry in colorList.colorList)
         {
-            Debug.Log("toggle drawed");
             Toggle childToggle = Instantiate(colorTogglePrefab, colorToggleContainer.transform.position, Quaternion.identity);
-            childToggle.isOn = false;
+            childToggle.isOn = true;
             childToggle.transform.GetChild(1).GetComponent<UnityEngine.UI.Text>().text = entry.hexColor;
             
             Color color;
@@ -58,7 +56,7 @@ public class UserLogin : MonoBehaviour
             childToggle.group = FindObjectOfType<ToggleGroup>();
         }
 
-        colorToggle.transform.GetChild(0).GetComponent<Toggle>().SetIsOnWithoutNotify(true);
+        
 
     }
 
@@ -78,22 +76,23 @@ public class UserLogin : MonoBehaviour
 
         if (ballToggle.isOn && currentPreview.gameObject.tag == "Cube")
         {
-            Debug.Log("Changed to Ball");
             Destroy(currentPreview);
             currentPreview = Instantiate(playerPreviewBall, spawnPoint.gameObject.transform.position, spawnPoint.gameObject.transform.rotation);
+            currentPreview.transform.SetParent(spawnPoint.transform);
+
         }
         if (cubeToggle.isOn && currentPreview.gameObject.tag == "Ball")
         {
-            Debug.Log("Changed to Cube");
             Destroy(currentPreview);
             currentPreview = Instantiate(playerPreviewCube, spawnPoint.gameObject.transform.position, spawnPoint.gameObject.transform.rotation);
+            currentPreview.transform.SetParent(spawnPoint.transform);
+
         }
 
         //Wait for colorlist has been updated from server 
         if (hasdisplayed)
         {
             currentPreview.GetComponent<Renderer>().material.color = colorToggle.GetFirstActiveToggle().transform.GetChild(1).GetComponent<UnityEngine.UI.Text>().color;
-
         }
         else
         {
@@ -140,10 +139,9 @@ public class UserLogin : MonoBehaviour
  
 
 
-    private async void loadColorFromServer()
+    private async void LoadColorFromServer()
     {
-        colorListRef = new Ref<string>();
-        await ServerCom.LoadColorList(colorListRef);
-        colorList = JsonUtility.FromJson<ColorList>(colorListRef.Value);
+        string serverResponse = await ServerCom.LoadColorList();
+        colorList = JsonUtility.FromJson<ColorList>(serverResponse);
     }
 }

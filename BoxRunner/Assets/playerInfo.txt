@@ -1,5 +1,5 @@
 {
-    "name": "d",
+    "name": "asdasd",
     "color": "#43FF00FF",
-    "shape": 1
+    "shape": 0
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
-    public PlayerMovement playerMovementScript;
+    public PlayerMovement playerMovement;
     public Rigidbody playerRb;
 
     public float explForce, forceRadius;
@@ -40,7 +40,7 @@ public class PlayerCollision : MonoBehaviour
             //Add explotion for visuals 
             playerRb.AddExplosionForce(explForce, transform.position, forceRadius);
             //playerMovementScript.enabled = false;
-            playerMovementScript.DisableMovement();
+            playerMovement.DisableMovement();
             FindObjectOfType<GameManeger>().EndGame();
             
         }

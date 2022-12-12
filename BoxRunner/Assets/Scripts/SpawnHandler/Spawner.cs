@@ -46,22 +46,20 @@ public class Spawner : MonoBehaviour
         posNow = player.transform.position.z;
         //Move transform according to player and an offset 
         transform.position = new Vector3(transform.position.x, transform.position.y, player.position.z + 100);
-
+             
+        //For each 50 frames spawn obstacles, could be dynamic
         if (posNow > posBefore + 50)
         {
-
             //Shuffle list after use
             shuffleGameObjects.Shuffle(childList);
 
-
             //Get the number of obstacles to spawn and then spawn them 
-            int numberOfObstacles = Random.Range(1, 5);
+            int numberOfObstacles = Random.Range(1, childList.Length);
             for (int i = 0; i < numberOfObstacles; i++)
             {
                 //Unity's way of spawning objects (take in object, position and a rotation 
                 Instantiate(prefab, transform.GetChild(i).position, Quaternion.identity);
             }
-
 
             //Update posBefore to keep track of player pos and when to spawn more objects 
             posBefore = posNow;

@@ -15,15 +15,17 @@ public class LeaderBoardMenu : MonoBehaviour
 
     private void Start()
     {
-        highScoreTable =  FileManager<HighScoreTable>.ReadFromFile(Application.dataPath + "/score.txt");
         LoadHighScoreTable();
     }
 
 
-    private void LoadHighScoreTable()
+    private async void LoadHighScoreTable()
     {
-        
-        foreach(HighScoreEntry entry in highScoreTable.entryList)
+        //highScoreTable =  FileManager<HighScoreTable>.ReadFromFile(Application.dataPath + "/score.txt");
+        string serverResponse = await ServerCom.LoadScoreBoard();
+
+        HighScoreTable highScoreTable = JsonUtility.FromJson<HighScoreTable>(serverResponse);
+        foreach (HighScoreEntry entry in highScoreTable.entryList)
         {
             DisplayHighScore(entry.name, entry.score);
         }

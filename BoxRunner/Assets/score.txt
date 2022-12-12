@@ -1,7 +1,7 @@
 {
     "entryList": [
         {
-            "name": "",
+            "name": "Hans",
             "score": 2479
         },
         {
@@ -9,35 +9,35 @@
             "score": 2468
         },
         {
-            "name": "",
+            "name": "JENS",
             "score": 2321
         },
         {
-            "name": "",
+            "name": "MARCUS",
             "score": 2111
         },
         {
-            "name": "",
+            "name": "LOTTE",
             "score": 1356
         },
         {
-            "name": "",
+            "name": "TESTBRUGER",
             "score": 1259
         },
         {
-            "name": "",
+            "name": "TOBIAS",
             "score": 1234
         },
         {
-            "name": "",
+            "name": "CASPER",
             "score": 1205
         },
         {
-            "name": "",
+            "name": "KASPER",
             "score": 1200
         },
         {
-            "name": "",
+            "name": "JONAS",
             "score": 1104
         },
         {
